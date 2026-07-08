@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpintería Martín | Muebles hechos a medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#inicio" class="logo">Carpintería <span>Martín</span></a>
+      <nav class="nav">
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="cart-btn" id="btnCarrito" aria-label="Abrir carrito">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3h2l2.6 12.4A2 2 0 0 0 9.6 17h7.8a2 2 0 0 0 2-1.6L21 8H6"/><circle cx="10" cy="21" r="1.3"/><circle cx="18" cy="21" r="1.3"/></svg>
+        <span class="cart-btn__badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__ruler" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <p class="hero__eyebrow">Taller de carpintería · Hecho a medida</p>
+      <h1 class="hero__title">Cada mueble<br>tiene su medida exacta.</h1>
+      <p class="hero__text">Trabajamos madera maciza para fabricar piezas únicas: mesas, placares, sillas y mucho más. Elegí, sumá al carrito y coordiná tu compra por transferencia.</p>
+      <a href="#productos" class="btn btn--primary">Ver productos</a>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTOS ===== -->
+  <section class="productos" id="productos">
+    <div class="section__head">
+      <span class="section__tag">Catálogo</span>
+      <h2>Nuestros productos</h2>
+    </div>
+    <div class="grid" id="gridProductos"><!-- generado por JS --></div>
+  </section>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section class="nosotros" id="nosotros">
+    <div class="nosotros__inner">
+      <h2>Madera real, trabajo real.</h2>
+      <p>En Carpintería Martín diseñamos y construimos cada pieza en nuestro taller, cuidando el detalle y la durabilidad. Si necesitás una medida especial, escribinos y lo fabricamos a tu gusto.</p>
+      <ul class="nosotros__lista">
+        <li>Madera maciza seleccionada</li>
+        <li>Fabricación a medida</li>
+        <li>Envíos coordinados por zona</li>
+        <li>Garantía de fabricación</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section class="contacto" id="contacto">
+    <div class="section__head">
+      <span class="section__tag">Contacto</span>
+      <h2>Contanos qué necesitás</h2>
+      <p class="section__sub">Completá tus datos y dejanos un comentario. Te respondemos para coordinar el pago y la entrega.</p>
+    </div>
+    <form class="form" id="formContacto">
+      <div class="form__row">
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre">
+      </div>
+      <div class="form__row">
+        <label for="telefono">Teléfono / WhatsApp</label>
+        <input type="tel" id="telefono" name="telefono" required placeholder="Ej: 1123456789">
+      </div>
+      <div class="form__row">
+        <label for="direccion">Dirección de entrega (opcional)</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Calle, número, ciudad">
+      </div>
+      <div class="form__row">
+        <label for="comentario">Comentario</label>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Contanos algo más: medidas especiales, color, día de entrega..."></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary">Enviar consulta por WhatsApp</button>
+      <p class="form__nota">Al enviar, se abre WhatsApp con tu pedido y los datos de transferencia para coordinar el pago.</p>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <p>Carpintería Martín — Muebles a medida</p>
+    <p class="footer__small">Sitio realizado por JN Web</p>
+  </footer>
+
+  <!-- ===== CARRITO (panel lateral) ===== -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="carrito" id="carrito">
+    <div class="carrito__head">
+      <h3>Tu carrito</h3>
+      <button id="btnCerrarCarrito" aria-label="Cerrar carrito">&times;</button>
+    </div>
+    <div class="carrito__items" id="carritoItems"><!-- generado por JS --></div>
+    <div class="carrito__footer">
+      <div class="carrito__total">
+        <span>Total</span>
+        <strong id="carritoTotal">$0</strong>
+      </div>
+      <div class="carrito__pago">
+        <p>Pago por transferencia al alias:</p>
+        <div class="alias-box">
+          <code id="aliasTexto">jonathan.antivero.1</code>
+          <button id="btnCopiarAlias" type="button">Copiar</button>
+        </div>
+      </div>
+      <a href="#contacto" class="btn btn--primary btn--full" id="btnIrContacto">Completar mis datos</a>
+    </div>
+  </aside>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
